@@ -2,12 +2,12 @@ package exercise7.model;
 
 public class Observation {
 
-    private int value;
+    private double value;
     private long timestamp;
 
     private ObservationType type;
 
-    public Observation(int value, long timestamp, ObservationType type) {
+    public Observation(double value, long timestamp, ObservationType type) {
         this.value = value;
         this.timestamp = timestamp;
         this.type = type;
@@ -21,11 +21,11 @@ public class Observation {
         return type.name() + "(" + timestamp + "," + value + ")";
     }
 
-    public int getValue() {
+    public double getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(double value) {
         this.value = value;
     }
 

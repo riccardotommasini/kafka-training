@@ -1,4 +1,4 @@
-package exercise11;
+package exercise10;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;

@@ -1,4 +1,4 @@
-package exercise10;
+package exercise9;
 
 import exercise7.deserialization.LocationDeserializer;
 import exercise7.deserialization.ObservationDeserializer;
@@ -50,8 +50,8 @@ public class MovingAVGConsumer {
 
                 }
                 collect.forEach((key, value) -> {
-                    Integer reduce = value.stream().map(e -> e.value().getValue())
-                            .reduce(0, (integer, integer2) -> integer + integer2);
+                    Double reduce = value.stream().map(e -> e.value().getValue())
+                            .reduce(0.0, (double1, double2) -> double1 + double2);
 
                     System.out.println(key + ": " + reduce / value.size());
                 });

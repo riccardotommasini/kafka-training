@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package exercise11;
+package exercise10;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -131,8 +131,8 @@ public class PoemKey extends org.apache.avro.specific.SpecificRecordBase impleme
    * Creates a new PoemKey RecordBuilder.
    * @return A new PoemKey RecordBuilder
    */
-  public static exercise11.PoemKey.Builder newBuilder() {
-    return new exercise11.PoemKey.Builder();
+  public static PoemKey.Builder newBuilder() {
+    return new PoemKey.Builder();
   }
 
   /**
@@ -140,8 +140,8 @@ public class PoemKey extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param other The existing builder to copy.
    * @return A new PoemKey RecordBuilder
    */
-  public static exercise11.PoemKey.Builder newBuilder(exercise11.PoemKey.Builder other) {
-    return new exercise11.PoemKey.Builder(other);
+  public static PoemKey.Builder newBuilder(PoemKey.Builder other) {
+    return new PoemKey.Builder(other);
   }
 
   /**
@@ -149,8 +149,8 @@ public class PoemKey extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param other The existing instance to copy.
    * @return A new PoemKey RecordBuilder
    */
-  public static exercise11.PoemKey.Builder newBuilder(exercise11.PoemKey other) {
-    return new exercise11.PoemKey.Builder(other);
+  public static PoemKey.Builder newBuilder(PoemKey other) {
+    return new PoemKey.Builder(other);
   }
 
   /**
@@ -173,7 +173,7 @@ public class PoemKey extends org.apache.avro.specific.SpecificRecordBase impleme
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(exercise11.PoemKey.Builder other) {
+    private Builder(PoemKey.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.work)) {
         this.work = data().deepCopy(fields()[0].schema(), other.work);
@@ -189,7 +189,7 @@ public class PoemKey extends org.apache.avro.specific.SpecificRecordBase impleme
      * Creates a Builder by copying an existing PoemKey instance
      * @param other The existing instance to copy.
      */
-    private Builder(exercise11.PoemKey other) {
+    private Builder(PoemKey other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.work)) {
         this.work = data().deepCopy(fields()[0].schema(), other.work);
@@ -216,7 +216,7 @@ public class PoemKey extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'work'.
       * @return This builder.
       */
-    public exercise11.PoemKey.Builder setWork(java.lang.CharSequence value) {
+    public PoemKey.Builder setWork(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.work = value;
       fieldSetFlags()[0] = true;
@@ -238,7 +238,7 @@ public class PoemKey extends org.apache.avro.specific.SpecificRecordBase impleme
       * The name of the work
       * @return This builder.
       */
-    public exercise11.PoemKey.Builder clearWork() {
+    public PoemKey.Builder clearWork() {
       work = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -259,7 +259,7 @@ public class PoemKey extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'year'.
       * @return This builder.
       */
-    public exercise11.PoemKey.Builder setYear(int value) {
+    public PoemKey.Builder setYear(int value) {
       validate(fields()[1], value);
       this.year = value;
       fieldSetFlags()[1] = true;
@@ -281,7 +281,7 @@ public class PoemKey extends org.apache.avro.specific.SpecificRecordBase impleme
       * The year the work was published
       * @return This builder.
       */
-    public exercise11.PoemKey.Builder clearYear() {
+    public PoemKey.Builder clearYear() {
       fieldSetFlags()[1] = false;
       return this;
     }

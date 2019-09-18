@@ -1,12 +1,12 @@
-package exercise10;
+package exercise9;
 
 import exercise7.deserialization.LocationDeserializer;
 import exercise7.deserialization.ObservationDeserializer;
 import exercise7.model.Location;
 import exercise7.model.Observation;
-import exercise10.commons.exceptions.OutOfOrderException;
-import exercise10.commons.windowing.Window;
-import exercise10.commons.windowing.WindowImpl;
+import exercise9.commons.exceptions.OutOfOrderException;
+import exercise9.commons.windowing.Window;
+import exercise9.commons.windowing.WindowImpl;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.TopicPartition;
 

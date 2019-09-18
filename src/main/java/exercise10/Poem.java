@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package exercise11;
+package exercise10;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -131,8 +131,8 @@ public class Poem extends org.apache.avro.specific.SpecificRecordBase implements
    * Creates a new Poem RecordBuilder.
    * @return A new Poem RecordBuilder
    */
-  public static exercise11.Poem.Builder newBuilder() {
-    return new exercise11.Poem.Builder();
+  public static Poem.Builder newBuilder() {
+    return new Poem.Builder();
   }
 
   /**
@@ -140,8 +140,8 @@ public class Poem extends org.apache.avro.specific.SpecificRecordBase implements
    * @param other The existing builder to copy.
    * @return A new Poem RecordBuilder
    */
-  public static exercise11.Poem.Builder newBuilder(exercise11.Poem.Builder other) {
-    return new exercise11.Poem.Builder(other);
+  public static Poem.Builder newBuilder(Poem.Builder other) {
+    return new Poem.Builder(other);
   }
 
   /**
@@ -149,8 +149,8 @@ public class Poem extends org.apache.avro.specific.SpecificRecordBase implements
    * @param other The existing instance to copy.
    * @return A new Poem RecordBuilder
    */
-  public static exercise11.Poem.Builder newBuilder(exercise11.Poem other) {
-    return new exercise11.Poem.Builder(other);
+  public static Poem.Builder newBuilder(Poem other) {
+    return new Poem.Builder(other);
   }
 
   /**
@@ -173,7 +173,7 @@ public class Poem extends org.apache.avro.specific.SpecificRecordBase implements
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(exercise11.Poem.Builder other) {
+    private Builder(Poem.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.line_number)) {
         this.line_number = data().deepCopy(fields()[0].schema(), other.line_number);
@@ -189,7 +189,7 @@ public class Poem extends org.apache.avro.specific.SpecificRecordBase implements
      * Creates a Builder by copying an existing Poem instance
      * @param other The existing instance to copy.
      */
-    private Builder(exercise11.Poem other) {
+    private Builder(Poem other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.line_number)) {
         this.line_number = data().deepCopy(fields()[0].schema(), other.line_number);
@@ -216,7 +216,7 @@ public class Poem extends org.apache.avro.specific.SpecificRecordBase implements
       * @param value The value of 'line_number'.
       * @return This builder.
       */
-    public exercise11.Poem.Builder setLineNumber(int value) {
+    public Poem.Builder setLineNumber(int value) {
       validate(fields()[0], value);
       this.line_number = value;
       fieldSetFlags()[0] = true;
@@ -238,7 +238,7 @@ public class Poem extends org.apache.avro.specific.SpecificRecordBase implements
       * The line number for line
       * @return This builder.
       */
-    public exercise11.Poem.Builder clearLineNumber() {
+    public Poem.Builder clearLineNumber() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -258,7 +258,7 @@ public class Poem extends org.apache.avro.specific.SpecificRecordBase implements
       * @param value The value of 'line'.
       * @return This builder.
       */
-    public exercise11.Poem.Builder setLine(java.lang.CharSequence value) {
+    public Poem.Builder setLine(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.line = value;
       fieldSetFlags()[1] = true;
@@ -280,7 +280,7 @@ public class Poem extends org.apache.avro.specific.SpecificRecordBase implements
       * The line from Shakespeare
       * @return This builder.
       */
-    public exercise11.Poem.Builder clearLine() {
+    public Poem.Builder clearLine() {
       line = null;
       fieldSetFlags()[1] = false;
       return this;
