@@ -1,4 +1,4 @@
-package exercise4;
+package exercise3;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -34,7 +34,6 @@ public class ConsumerMain {
         KafkaConsumer<Integer, Integer> consumer =
                 new KafkaConsumer<Integer, Integer>(properties);
 
-
         consumer.subscribe(Arrays.asList("evens"));
 
         consumer.poll(0);
@@ -56,7 +55,6 @@ public class ConsumerMain {
             ConsumerRecords<Integer, Integer> records =
                     consumer.poll(Duration.ofMillis(100));
 
-
             records.forEach(
                     r -> {
 
@@ -67,7 +65,7 @@ public class ConsumerMain {
                         System.out.println(r.value());
 
                         ProducerRecord<Integer, Integer> record =
-                                new ProducerRecord<>("evens", r.key(), r.value() + 1);
+                                new ProducerRecord<>("odds", r.key(), r.value() + 1);
                         producer.send(record);
 
                     });

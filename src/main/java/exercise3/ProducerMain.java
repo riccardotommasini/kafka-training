@@ -1,4 +1,4 @@
-package exercise4;
+package exercise3;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
