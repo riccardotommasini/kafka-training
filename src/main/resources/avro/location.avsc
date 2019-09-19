@@ -12,7 +12,7 @@
         "name": "locationType",
         "type": {
                   "type": "enum",
-                  "name": "AvroObservationType",
+                  "name": "AvroLocationType",
                   "symbols" : ["ROOM", "BUILDING", "PARK"]
                 },
         "doc" : "The type of the location"

@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class AvroLocation extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -520053953630917099L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"AvroLocation\",\"namespace\":\"exercise9\",\"fields\":[{\"name\":\"locationArea\",\"type\":\"string\",\"doc\":\"The location where the sensor is deployed\"},{\"name\":\"locationType\",\"type\":{\"type\":\"enum\",\"name\":\"AvroObservationType\",\"symbols\":[\"ROOM\",\"BUILDING\",\"PARK\"]},\"doc\":\"The type of the location\"}]}");
+  private static final long serialVersionUID = -4902397947132397516L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"AvroLocation\",\"namespace\":\"exercise9\",\"fields\":[{\"name\":\"locationArea\",\"type\":\"string\",\"doc\":\"The location where the sensor is deployed\"},{\"name\":\"locationType\",\"type\":{\"type\":\"enum\",\"name\":\"AvroLocationType\",\"symbols\":[\"ROOM\",\"BUILDING\",\"PARK\"]},\"doc\":\"The type of the location\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -54,7 +54,7 @@ public class AvroLocation extends org.apache.avro.specific.SpecificRecordBase im
   /** The location where the sensor is deployed */
   @Deprecated public java.lang.CharSequence locationArea;
   /** The type of the location */
-  @Deprecated public exercise9.AvroObservationType locationType;
+  @Deprecated public exercise9.AvroLocationType locationType;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -68,7 +68,7 @@ public class AvroLocation extends org.apache.avro.specific.SpecificRecordBase im
    * @param locationArea The location where the sensor is deployed
    * @param locationType The type of the location
    */
-  public AvroLocation(java.lang.CharSequence locationArea, exercise9.AvroObservationType locationType) {
+  public AvroLocation(java.lang.CharSequence locationArea, exercise9.AvroLocationType locationType) {
     this.locationArea = locationArea;
     this.locationType = locationType;
   }
@@ -88,7 +88,7 @@ public class AvroLocation extends org.apache.avro.specific.SpecificRecordBase im
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: locationArea = (java.lang.CharSequence)value$; break;
-    case 1: locationType = (exercise9.AvroObservationType)value$; break;
+    case 1: locationType = (exercise9.AvroLocationType)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -114,7 +114,7 @@ public class AvroLocation extends org.apache.avro.specific.SpecificRecordBase im
    * Gets the value of the 'locationType' field.
    * @return The type of the location
    */
-  public exercise9.AvroObservationType getLocationType() {
+  public exercise9.AvroLocationType getLocationType() {
     return locationType;
   }
 
@@ -123,7 +123,7 @@ public class AvroLocation extends org.apache.avro.specific.SpecificRecordBase im
    * The type of the location
    * @param value the value to set.
    */
-  public void setLocationType(exercise9.AvroObservationType value) {
+  public void setLocationType(exercise9.AvroLocationType value) {
     this.locationType = value;
   }
 
@@ -162,7 +162,7 @@ public class AvroLocation extends org.apache.avro.specific.SpecificRecordBase im
     /** The location where the sensor is deployed */
     private java.lang.CharSequence locationArea;
     /** The type of the location */
-    private exercise9.AvroObservationType locationType;
+    private exercise9.AvroLocationType locationType;
 
     /** Creates a new Builder */
     private Builder() {
@@ -249,7 +249,7 @@ public class AvroLocation extends org.apache.avro.specific.SpecificRecordBase im
       * The type of the location
       * @return The value.
       */
-    public exercise9.AvroObservationType getLocationType() {
+    public exercise9.AvroLocationType getLocationType() {
       return locationType;
     }
 
@@ -259,7 +259,7 @@ public class AvroLocation extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'locationType'.
       * @return This builder.
       */
-    public exercise9.AvroLocation.Builder setLocationType(exercise9.AvroObservationType value) {
+    public exercise9.AvroLocation.Builder setLocationType(exercise9.AvroLocationType value) {
       validate(fields()[1], value);
       this.locationType = value;
       fieldSetFlags()[1] = true;
@@ -293,7 +293,7 @@ public class AvroLocation extends org.apache.avro.specific.SpecificRecordBase im
       try {
         AvroLocation record = new AvroLocation();
         record.locationArea = fieldSetFlags()[0] ? this.locationArea : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.locationType = fieldSetFlags()[1] ? this.locationType : (exercise9.AvroObservationType) defaultValue(fields()[1]);
+        record.locationType = fieldSetFlags()[1] ? this.locationType : (exercise9.AvroLocationType) defaultValue(fields()[1]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

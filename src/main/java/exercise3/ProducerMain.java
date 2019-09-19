@@ -20,15 +20,14 @@ public class ProducerMain {
                 IntegerSerializer.class.getName());
 
         KafkaProducer<Integer, Integer> producer = new KafkaProducer<>(properties);
+        String topic = "evens";
 
         int i = 0;
 
         try {
             while (true) {
                 i += 2;
-                ProducerRecord<Integer, Integer> record =
-                        new ProducerRecord<>("evens", i, i);
-                producer.send(record);
+                producer.send(new ProducerRecord<>(topic, i, i));
                 Thread.sleep(5000);
             }
         } finally {

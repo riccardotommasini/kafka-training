@@ -28,7 +28,7 @@ public class ConsumerMain {
                 ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
                 IntegerDeserializer.class.getName());
         properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG,
-                "myfirstconsumer");
+                "even-consumer-odds-producer");
 
 
         KafkaConsumer<Integer, Integer> consumer =

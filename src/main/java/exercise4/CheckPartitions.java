@@ -1,5 +1,6 @@
 package exercise4;
 
+import inclass.MyPartitionerIC;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -24,14 +25,13 @@ public class CheckPartitions {
                 ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
                 IntegerDeserializer.class.getName());
         properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG,
-                "number-partition-checker");
-
+                "number-partition-checker3");
 
         KafkaConsumer<Integer, Integer> consumer =
                 new KafkaConsumer<Integer, Integer>(properties);
 
 
-        consumer.subscribe(Arrays.asList("numbers2"));
+        consumer.subscribe(Arrays.asList("numbers3"));
 
         consumer.poll(0);
 
@@ -46,9 +46,7 @@ public class CheckPartitions {
             records.forEach(
                     r -> {
 
-                        System.out.println(r.partition());
-                        System.out.println(r.key());
-                        System.out.println(r.value());
+                        System.out.println(r.partition() + " " +r.value());
 
 
                     });
