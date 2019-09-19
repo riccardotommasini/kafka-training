@@ -1,4 +1,4 @@
-package exercise9;
+package exercise10;
 
 import exercise7.deserialization.LocationDeserializer;
 import exercise7.deserialization.ObservationDeserializer;

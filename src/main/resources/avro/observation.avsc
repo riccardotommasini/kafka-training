@@ -1,0 +1,25 @@
+{"namespace": "exercise9",
+ "type": "record",
+ "name": "AvroObservation",
+ "fields": [
+     {
+        "name": "value",
+        "type": "double",
+        "doc" : "The value of the Observation"
+     },
+     {
+        "name": "timestamp",
+        "type": "long",
+        "doc" : "The timestamp of the Observation"
+     },
+     {
+        "name": "observationType",
+        "type": {
+                    "type": "enum",
+                    "name": "AvroObservationType",
+                    "symbols" : ["TEMPERATURE", "HUMIDITY", "PRESSURE"]
+                },
+        "doc" : "The type of the Observation"
+      }
+ ]
+}

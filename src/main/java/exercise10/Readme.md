@@ -1,6 +1,4 @@
-# Exercize9 mvn package to generate the avro sources
+# Exercize 8: manage offset outside kafka
 
 
-need to run schema registry and rest api
-
-with their properties
+save the offset on file and retrieve it

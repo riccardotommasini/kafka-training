@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package exercise10;
+package exercise11;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.message.BinaryMessageEncoder;

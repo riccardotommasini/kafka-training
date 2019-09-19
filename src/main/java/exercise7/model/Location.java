@@ -2,7 +2,6 @@ package exercise7.model;
 
 public class Location {
     private String location;
-
     private LocationType type;
 
     public Location(String location, LocationType type) {

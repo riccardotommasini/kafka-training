@@ -1,4 +1,4 @@
-package exercise10;
+package exercise11;
 
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;
 import org.apache.kafka.clients.consumer.ConsumerConfig;

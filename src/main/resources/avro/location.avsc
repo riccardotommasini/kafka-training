@@ -1,0 +1,21 @@
+{"namespace": "exercise9",
+ "type": "record",
+ "name": "AvroLocation",
+ "fields": [
+     {
+        "name": "locationArea",
+         "type": "string",
+         "doc" : "The location where the sensor is deployed"
+        },
+
+     {
+        "name": "locationType",
+        "type": {
+                  "type": "enum",
+                  "name": "AvroObservationType",
+                  "symbols" : ["ROOM", "BUILDING", "PARK"]
+                },
+        "doc" : "The type of the location"
+     }
+ ]
+}

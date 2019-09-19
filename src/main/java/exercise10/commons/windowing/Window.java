@@ -1,4 +1,4 @@
-package exercise9.commons.windowing;
+package exercise10.commons.windowing;
 
 public interface Window {
 
