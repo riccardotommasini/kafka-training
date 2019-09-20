@@ -1,10 +1,5 @@
 package exercise9;
 
-import exercise7.model.Location;
-import exercise7.model.Observation;
-import inclass.temperatura.LocType;
-import inclass.temperatura.ObsType;
-import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import io.confluent.kafka.serializers.KafkaAvroSerializerConfig;
 import org.apache.kafka.clients.producer.KafkaProducer;

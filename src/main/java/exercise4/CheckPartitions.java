@@ -1,6 +1,5 @@
 package exercise4;
 
-import inclass.MyPartitionerIC;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
