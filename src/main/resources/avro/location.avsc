@@ -1,4 +1,4 @@
-{"namespace": "exercise9",
+{"namespace": "kafka.advanced.exercise9",
  "type": "record",
  "name": "AvroLocation",
  "fields": [

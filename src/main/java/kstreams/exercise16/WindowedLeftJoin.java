@@ -1,0 +1,57 @@
+package kstreams.exercise16;
+
+import com.google.gson.Gson;
+import kstreams.exercise16.model.*;
+import org.apache.kafka.common.serialization.Serdes;
+import org.apache.kafka.streams.KafkaStreams;
+import org.apache.kafka.streams.StreamsBuilder;
+import org.apache.kafka.streams.StreamsConfig;
+import org.apache.kafka.streams.Topology;
+import org.apache.kafka.streams.kstream.*;
+
+import java.time.Duration;
+import java.util.Properties;
+import java.util.UUID;
+
+public class WindowedLeftJoin {
+
+    static Gson gson = new Gson();
+
+    public static void main(String[] args) {
+        StreamsBuilder builder = new StreamsBuilder();
+
+        Properties props = new Properties();
+        props.put(StreamsConfig.APPLICATION_ID_CONFIG, UUID.randomUUID().toString());
+        props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
+        props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, RegionalPageSerde.class);
+
+        KStream<String, PageView> pageviews = builder.stream("pageviews", Consumed.with(Serdes.String(), new PageSerde()));
+
+        KTable<String, User> users = builder.table("users", Consumed.with(Serdes.String(), new UserSerde()));
+
+        KStream<String, PageView> pageviewsbyuser = pageviews.selectKey((key, value) -> value.getUserid());
+
+        KStream<String, RegionalView> joined = pageviewsbyuser
+                .leftJoin(users, (pageView, user) -> new RegionalView(user.getRegionid(), pageView));
+
+        //joined.groupByKey().windowedBy(TimeWindows.of(Duration.ofSeconds(10))).count().toStream().print(Printed.toSysOut());
+
+        joined.selectKey((key, value) -> value.getUser_region()).groupByKey()
+                .windowedBy(TimeWindows.of(Duration.ofSeconds(10))).count()
+                .toStream().print(Printed.toSysOut());
+
+        Topology topology = builder.build();
+
+        System.out.println(topology.describe().toString());
+
+        KafkaStreams ks = new KafkaStreams(topology, props);
+        ks.start();
+    }
+
+    //[KSTREAM-SOURCE-0000000000]: 1013, {"ordertime":1509049597997,"orderid":1013,"itemid":"Item_273","orderunits":5.076322735052166,"address":{"city":"City_14","state":"State_31","zipcode":80962}}
+
+}
+
+
+
