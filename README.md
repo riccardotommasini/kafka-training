@@ -80,7 +80,7 @@ TBD
 
 Download Confluent Platform [here](https://www.confluent.io/download/)
 
-enter the bin folder and verify if all the scrits are executable
+enter the bin folder and verify if all the scripts are executable
 
 ```bash
 #grant permission
