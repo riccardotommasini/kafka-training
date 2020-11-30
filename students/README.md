@@ -6,8 +6,17 @@
 ```bash
 kafka-topics --bootstrap-server kafka1:9092 --partitions 2 --create --topic observations 
 kafka-topics --bootstrap-server kafka1:9092 --partitions 2 --create --topic capacities 
+```
+
+### Generate AVRO CLASSES
 
 ```
+mvn generate-sources
+```
+
+![or via maven](./src/main/resources/genavro.png)
+
+### RUN Producers
 
 - Run [Observation Producer](./src/main/java/ee/ut/cs/dsg/PersonProducer.java)
 - Run [Configuration Producer](../ksql/src/main/java/ee/ut/cs/dsg/CapacityProducer.java)
